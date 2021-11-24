@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
+project(http_parser)
+add_compile_options(-std=c++20 -Wall)
+include_directories(include)
+include_directories(src)
+add_executable(test ./test/test.cpp src/http_header.cpp src/http_verb.cpp src/http_header_field.cpp src/http_status.cpp
+src/http_body.cpp src/http_parser.cpp src/http_error.cpp)
