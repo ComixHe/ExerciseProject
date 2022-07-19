@@ -32,7 +32,7 @@ public:
   ThreadSafeQueue &operator=(const ThreadSafeQueue &) = delete;
   ThreadSafeQueue(ThreadSafeQueue &&other) = delete;
   ThreadSafeQueue &operator=(ThreadSafeQueue &&other) = delete;
-  ~ThreadSafeQueue() {}
+  ~ThreadSafeQueue() = default;
 
   bool empty() const noexcept {
     std::lock_guard<std::mutex> lockholder(locker);
